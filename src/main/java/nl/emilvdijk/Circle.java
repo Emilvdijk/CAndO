@@ -28,7 +28,7 @@ class Circle {
     return (radius * 2) * Math.PI;
   }
 
-  double CalcCircumference(double radius) {
+  static double CalcCircumference(double radius) {
     return (radius * 2) * Math.PI;
   }
 
@@ -36,7 +36,7 @@ class Circle {
     return Math.PI * (radius * radius);
   }
 
-  double CalcSurfaceArea(double radius) {
+  static double CalcSurfaceArea(double radius) {
     return Math.PI * (radius * radius);
   }
 

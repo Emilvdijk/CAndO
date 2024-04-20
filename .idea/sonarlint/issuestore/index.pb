@@ -20,3 +20,7 @@ V
 &src/main/java/nl/emilvdijk/Circle.java,5\5\551ca26f5d2497d00dd0abf3889bb67dac1437a2
 V
 &src/main/java/nl/emilvdijk/opdracht.md,3\e\3e97a8e2f6d173991a52783444e53f1fa882a29c
+]
+-src/test/java/nl/emilvdijk/RectangleTest.java,5\d\5d11c9912ddd81ce0a0e79d43e1bc7fa372bf6f7
+Z
+*src/test/java/nl/emilvdijk/CircleTest.java,c\e\ce9ff63cc4605fc0a23b381bac57bc7edf63f469

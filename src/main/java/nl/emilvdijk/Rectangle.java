@@ -4,7 +4,6 @@ public class Rectangle {
 
   int length;
   int width;
-  // FIXME afmaken en testen
 
   public Rectangle(int length, int width) {
     this.length = length;
@@ -21,19 +20,19 @@ public class Rectangle {
     this.width = 2;
   }
 
-  private int CalcSurfaceArea() {
+  int CalcSurfaceArea() {
     return length * width;
   }
 
-  private int CalcSurfaceArea(int Length, int Width) {
+  static int CalcSurfaceArea(int Length, int Width) {
     return Length * Width;
   }
 
-  private int CalcCircumference() {
+  int CalcCircumference() {
     return (length * 2) + (width * 2);
   }
 
-  private int CalcCircumference(int length, int width) {
+  static int CalcCircumference(int length, int width) {
     return (length * 2) + (width * 2);
   }
 
@@ -44,6 +43,19 @@ public class Rectangle {
     int fitAmount = (int) compare1 * (int) compare2;
     compare1 = rectangleBase.width / rectangleFitter.width;
     compare2 = rectangleBase.length / rectangleFitter.length;
+    if ((int) compare1 * (int) compare2 > fitAmount) {
+      fitAmount = (int) compare1 * (int) compare2;
+    }
+    return fitAmount;
+  }
+
+  int CalcFittingIn(double length, double width) {
+    Rectangle rectangleFitter = this;
+    double compare1 = width / rectangleFitter.length;
+    double compare2 = length / rectangleFitter.width;
+    int fitAmount = (int) compare1 * (int) compare2;
+    compare1 = width / rectangleFitter.width;
+    compare2 = length / rectangleFitter.length;
     if ((int) compare1 * (int) compare2 > fitAmount) {
       fitAmount = (int) compare1 * (int) compare2;
     }
