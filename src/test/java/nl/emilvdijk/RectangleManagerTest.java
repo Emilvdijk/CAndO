@@ -23,7 +23,6 @@ class RectangleManagerTest {
   @BeforeEach
   public void setUpStream() {
     System.setOut(new PrintStream(outContent, false, StandardCharsets.UTF_8));
-    inputStream = new ByteArrayInputStream("1\r\n".getBytes());
     System.setIn(inputStream);
   }
 
