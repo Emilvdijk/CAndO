@@ -1,6 +1,7 @@
 package nl.emilvdijk;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.ByteArrayInputStream;
@@ -23,7 +24,6 @@ class RectangleManagerTest {
   @BeforeEach
   public void setUpStream() {
     System.setOut(new PrintStream(outContent, false, StandardCharsets.UTF_8));
-    inputStream = new ByteArrayInputStream("1\r\n".getBytes());
     System.setIn(inputStream);
   }
 
@@ -39,10 +39,12 @@ class RectangleManagerTest {
 
     rectanglesList2.add(nicerecy12);
     assertEquals(1, rectanglesList2.size());
+    assertTrue(rectanglesList2.contains(nicerecy12));
     RectangleManager.deleteRectangle(rectanglesList2);
     String testOutput = outContent.toString();
     assertEquals(0, rectanglesList2.size());
     assertTrue(testOutput.contains("Which rectangle would you like to delete:"));
+    assertFalse(rectanglesList2.contains(nicerecy12));
   }
 
 
@@ -67,9 +69,9 @@ class RectangleManagerTest {
     System.setIn(inputStream2);
     rectanglesList.add(RectangleManager.addRectangle());
     assertEquals(1, rectanglesList.size());
-    assertEquals("nicetest",rectanglesList.get(0).name);
-    assertEquals(12,rectanglesList.get(0).length);
-    assertEquals(12,rectanglesList.get(0).width);
+    assertEquals("nicetest",rectanglesList.get(0).getName());
+    assertEquals(12,rectanglesList.get(0).getLength());
+    assertEquals(12,rectanglesList.get(0).getWidth());
 
   }
 }

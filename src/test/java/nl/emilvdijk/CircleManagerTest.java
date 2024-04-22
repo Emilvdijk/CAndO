@@ -21,6 +21,7 @@ class CircleManagerTest {
   @BeforeEach
   public void setUpStream() {
     System.setOut(new PrintStream(outContent, false, StandardCharsets.UTF_8));
+    System.setIn(inputStream);
   }
 
   @BeforeAll
@@ -37,11 +38,15 @@ class CircleManagerTest {
     cirlceList.add(nicecircy1);
 
     assertEquals(1, cirlceList.size());
+    assertTrue(cirlceList.contains(nicecircy1));
     CircleManager.deleteCircle(cirlceList);
     String testOutput = outContent.toString();
     assertEquals(0, cirlceList.size());
     assertTrue(testOutput.contains("Which circle would you like to delete:"));
+    assertFalse(cirlceList.contains(nicecircy1));
+
   }
+
   @Test
   void deleteCircle2() {
     ArrayList<Circle> circleList = new ArrayList<>();
@@ -61,7 +66,7 @@ class CircleManagerTest {
     System.setIn(inputStream2);
     circleList.add(CircleManager.addCircle());
     assertEquals(1, circleList.size());
-    assertEquals("nicetest",circleList.get(0).name);
-    assertEquals(12,circleList.get(0).radius);
+    assertEquals("nicetest",circleList.get(0).getName());
+    assertEquals(12,circleList.get(0).getRadius());
   }
 }

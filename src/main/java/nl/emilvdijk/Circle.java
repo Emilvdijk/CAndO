@@ -2,8 +2,8 @@ package nl.emilvdijk;
 
 class Circle {
 
-  String name;
-  double radius;
+  private String name;
+  private double radius;
 
   /**
    * circle object constructor
@@ -13,6 +13,14 @@ class Circle {
   Circle(String name,double radius) {
     this.name = name;
     this.radius = radius;
+  }
+
+  String getName() {
+    return name;
+  }
+
+  public double getRadius() {
+    return radius;
   }
 
   /**

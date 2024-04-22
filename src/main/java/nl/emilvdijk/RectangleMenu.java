@@ -1,11 +1,8 @@
 package nl.emilvdijk;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class RectangleMenu {
-
-  static final ArrayList<Rectangle> rectanglesList = new ArrayList<>();
 
   /**
    * private constructor to prevent instantiation
@@ -21,7 +18,6 @@ public class RectangleMenu {
     Scanner myScanner = new Scanner(System.in);
     while (true) {
       System.out.println("""
-                    
           1 list rectangles
           2 Create new rectangle
           3 Remove rectangle
@@ -41,15 +37,15 @@ public class RectangleMenu {
 
       switch (myScanner.nextLine()) {
         case "1":
-          RectangleMenu.rectangleListPrinter();
+          rectangleListPrinter();
           break;
 
         case "2":
-          rectanglesList.add(RectangleManager.addRectangle());
+          RectangleManager.rectanglesList.add(RectangleManager.addRectangle());
           break;
 
         case "3":
-          RectangleManager.deleteRectangle(rectanglesList);
+          RectangleManager.deleteRectangle(RectangleManager.rectanglesList);
           break;
 
         case "4":
@@ -90,32 +86,35 @@ public class RectangleMenu {
    * prints out all rectangle object details
    */
   private static void rectangleListPrinter() {
-    if (rectanglesList.isEmpty()) {
+    if (RectangleManager.rectanglesList.isEmpty()) {
       System.out.println("no items to show");
       return;
     }
-    for (Rectangle rectangle : rectanglesList) {
+    for (Rectangle rectangle : RectangleManager.rectanglesList) {
       rectangle.rectanglePrinter();
     }
   }
 
+  /**
+   * asks user to choose a rectangle object and prints out its circumference
+   */
   private static void circumferenceOfRectangleCalc() {
     Scanner myScanner = new Scanner(System.in);
-    if (rectanglesList.isEmpty()) {
+    if (RectangleManager.rectanglesList.isEmpty()) {
       System.out.println("no items to calculate with");
       return;
     }
     System.out.println("please select rectangle to calculate circumference of");
-    int y = 0;
-    for (; y < rectanglesList.size(); y++) {
-      System.out.printf(" %s  %s%n", y + 1, rectanglesList.get(y).name);
+
+    for (int y = 0; y < RectangleManager.rectanglesList.size(); y++) {
+      System.out.printf(" %s  %s%n", y + 1, RectangleManager.rectanglesList.get(y).getName());
     }
     int choice;
     do {
       choice = myScanner.nextInt();
-    } while (!(choice >= 1 && choice <= y));
-    System.out.printf("circumference of %s is: %s", rectanglesList.get(choice - 1).name,
-        rectanglesList.get(choice - 1).calcCircumference());
+    } while (!(choice >= 1 && choice <= RectangleManager.rectanglesList.size()));
+    System.out.printf("circumference of %s is: %s", RectangleManager.rectanglesList.get(choice - 1).getName(),
+        RectangleManager.rectanglesList.get(choice - 1).calcCircumference());
   }
 
   /**
@@ -143,21 +142,21 @@ public class RectangleMenu {
    */
   private static void surfaceAreaOfRectangleCalc() {
     Scanner myScanner = new Scanner(System.in);
-    if (rectanglesList.isEmpty()) {
+    if (RectangleManager.rectanglesList.isEmpty()) {
       System.out.println("no items to calculate with");
       return;
     }
     System.out.println("please select rectangle to calculate surface area of");
-    int y = 0;
-    for (; y < rectanglesList.size(); y++) {
-      System.out.printf("%s  %s%n", y + 1, rectanglesList.get(y).name);
+
+    for (int y = 0; y < RectangleManager.rectanglesList.size(); y++) {
+      System.out.printf("%s  %s%n", y + 1, RectangleManager.rectanglesList.get(y).getName());
     }
     int choice;
     do {
       choice = myScanner.nextInt();
-    } while (!(choice >= 1 && choice <= y));
-    System.out.printf("surface area of %s is: %s", rectanglesList.get(choice - 1).name,
-        rectanglesList.get(choice - 1).calcSurfaceArea());
+    } while (!(choice >= 1 && choice <= RectangleManager.rectanglesList.size()));
+    System.out.printf("surface area of %s is: %s", RectangleManager.rectanglesList.get(choice - 1).getName(),
+        RectangleManager.rectanglesList.get(choice - 1).calcSurfaceArea());
 
   }
 
@@ -181,37 +180,36 @@ public class RectangleMenu {
     System.out.printf("surface area is: %s", Rectangle.calcSurfaceArea(length, width));
   }
 
-  /**
-   * asks user to choose a rectangle object and prints out its circumference
-   */
+
 
   /**
    *asks user to select a rectangle object and distance between poles and prints out the amount of poles
    */
   private static void calcPoleAmountOfRectangle() {
     Scanner myScanner = new Scanner(System.in);
-    if (rectanglesList.isEmpty()) {
+    if (RectangleManager.rectanglesList.isEmpty()) {
       System.out.println("no items to calculate with");
       return;
     }
     System.out.println("please select rectangle to calculate amount of poles");
-    int y = 0;
-    for (; y < rectanglesList.size(); y++) {
-      System.out.printf("%s  %s%n", y + 1, rectanglesList.get(y).name);
+
+    for (int y = 0; y < RectangleManager.rectanglesList.size(); y++) {
+      System.out.printf("%s  %s%n", y + 1, RectangleManager.rectanglesList.get(y).getName());
     }
     int choiceRectangle;
     do {
       choiceRectangle = myScanner.nextInt();
-    } while (!(choiceRectangle >= 1 && choiceRectangle <= y));
+    } while (!(choiceRectangle >= 1 && choiceRectangle <= RectangleManager.rectanglesList.size()));
 
     System.out.println("enter the distance between poles (can be decimal number)");
     while (!myScanner.hasNextDouble()) {
       System.out.println("Please enter a number to choose.");
       myScanner.next();
     }
+    double poleDistance=myScanner.nextDouble();
     System.out.printf("amount of poles in the fence around %s is: %s",
-        rectanglesList.get(choiceRectangle - 1).name,
-        rectanglesList.get(choiceRectangle - 1).calcPoleAmount(myScanner.nextDouble()));
+        RectangleManager.rectanglesList.get(choiceRectangle - 1).getName(),
+        RectangleManager.rectanglesList.get(choiceRectangle - 1).calcPoleAmount(poleDistance));
   }
 
   /**
@@ -219,28 +217,29 @@ public class RectangleMenu {
    */
   private static void calcPoleDistanceOfRectangle() {
     Scanner myScanner = new Scanner(System.in);
-    if (rectanglesList.isEmpty()) {
+    if (RectangleManager.rectanglesList.isEmpty()) {
       System.out.println("no items to calculate with");
       return;
     }
     System.out.println("please select rectangle to calculate distance between poles");
-    int y = 0;
-    for (; y < rectanglesList.size(); y++) {
-      System.out.printf("%s  %s%n", y + 1, rectanglesList.get(y).name);
+
+    for (int y = 0; y < RectangleManager.rectanglesList.size(); y++) {
+      System.out.printf("%s  %s%n", y + 1, RectangleManager.rectanglesList.get(y).getName());
     }
     int choiceRectangle;
     do {
       choiceRectangle = myScanner.nextInt();
-    } while (!(choiceRectangle >= 1 && choiceRectangle <= y));
+    } while (!(choiceRectangle >= 1 && choiceRectangle <= RectangleManager.rectanglesList.size()));
 
     System.out.println("how many poles are in the fence");
     while (!myScanner.hasNextInt()) {
       System.out.println("Please enter a number to choose.");
       myScanner.next();
     }
+    int amountOfPoles= myScanner.nextInt();
     System.out.printf("distance between poles of %s is: %s",
-        rectanglesList.get(choiceRectangle - 1).name,
-        rectanglesList.get(choiceRectangle - 1).calcPoleDistance(myScanner.nextInt()));
+        RectangleManager.rectanglesList.get(choiceRectangle - 1).getName(),
+        RectangleManager.rectanglesList.get(choiceRectangle - 1).calcPoleDistance(amountOfPoles));
   }
 
 }

@@ -5,6 +5,8 @@ import java.util.Scanner;
 
 public class CircleManager {
 
+  static final ArrayList<Circle> circleList = new ArrayList<>();
+
   /**
    * private constructor to prevent instantiation
    */
@@ -21,15 +23,15 @@ public class CircleManager {
       System.out.println("no items to delete");
       return;
     }
-    int y = 1;
+
     System.out.println("Which circle would you like to delete:");
-    for (; y - 1 < circleList.size(); y++) {
-      System.out.printf("%s  %s%n", y, circleList.get(y - 1).name);
+    for (int y = 1; y - 1 < circleList.size(); y++) {
+      System.out.printf("%s  %s%n", y, circleList.get(y - 1).getName());
     }
     int choice;
     do {
       choice = myScanner.nextInt();
-    } while (!(choice >= 1 && choice <= y - 1));
+    } while (!(choice >= 1 && choice <= circleList.size()));
     circleList.remove(choice - 1);
   }
 

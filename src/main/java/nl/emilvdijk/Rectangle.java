@@ -1,10 +1,10 @@
 package nl.emilvdijk;
 
 public class Rectangle {
-  String name;
 
-  int length;
-  int width;
+  private String name;
+  private int length;
+  private int width;
 
   /**
    * rectangle object constructor
@@ -43,6 +43,18 @@ public class Rectangle {
     return length * width;
   }
 
+  public String getName() {
+    return name;
+  }
+
+  public int getWidth() {
+    return width;
+  }
+
+  public int getLength() {
+    return length;
+  }
+
   /**
    * calculates surface area of rectangle with given length and width
    * @param length length to calculate with
@@ -74,19 +86,10 @@ public class Rectangle {
   /**
    * calculates how many times a rectangle object fits inside another rectangle object
    * @param rectangleBase bigger rectangle object to try and fit into
-   * @return amount of times it fits
+   * @return runs an overloaded method which calculates fitting
    */
   int calcFittingIn(Rectangle rectangleBase) {
-    Rectangle rectangleFitter = this;
-    double compare1 = (double) rectangleBase.width / rectangleFitter.length;
-    double compare2 = (double) rectangleBase.length / rectangleFitter.width;
-    int fitAmount = (int) compare1 * (int) compare2;
-    compare1 = (double) rectangleBase.width / rectangleFitter.width;
-    compare2 = (double) rectangleBase.length / rectangleFitter.length;
-    if ((int) compare1 * (int) compare2 > fitAmount) {
-      fitAmount = (int) compare1 * (int) compare2;
-    }
-    return fitAmount;
+    return calcFittingIn(rectangleBase.length, rectangleBase.width);
   }
 
   /**
@@ -107,6 +110,7 @@ public class Rectangle {
     }
     return fitAmount;
   }
+
 
   /**
    * calculates distance between poles in a fence of a rectangle object
@@ -134,5 +138,6 @@ public class Rectangle {
         "Name: %-15s Length: %-6s  Width: %-6s %n",name,
         length, width);
   }
+
 }
 

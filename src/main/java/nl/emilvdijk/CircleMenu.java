@@ -1,11 +1,8 @@
 package nl.emilvdijk;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CircleMenu {
-
-  static final ArrayList<Circle> circleList = new ArrayList<>();
 
   /**
    * private constructor to prevent instantiation
@@ -21,7 +18,6 @@ public class CircleMenu {
     Scanner myScanner = new Scanner(System.in);
     while (true) {
       System.out.println("""
-                    
           1 list Circle
           2 Create new Circle
           3 Remove Circle
@@ -41,15 +37,15 @@ public class CircleMenu {
 
       switch (myScanner.nextLine()) {
         case "1":
-          CircleMenu.circleListPrinter();
+          circleListPrinter();
           break;
 
         case "2":
-          circleList.add(CircleManager.addCircle());
+          CircleManager.circleList.add(CircleManager.addCircle());
           break;
 
         case "3":
-          CircleManager.deleteCircle(circleList);
+          CircleManager.deleteCircle(CircleManager.circleList);
           break;
 
         case "4":
@@ -89,11 +85,11 @@ public class CircleMenu {
    * prints out all circle item details
    */
   private static void circleListPrinter() {
-    if (circleList.isEmpty()) {
+    if (CircleManager.circleList.isEmpty()) {
       System.out.println("no items to show");
       return;
     }
-    for (Circle circle : circleList) {
+    for (Circle circle : CircleManager.circleList) {
       circle.circlePrinter();
     }
   }
@@ -103,21 +99,20 @@ public class CircleMenu {
    */
   private static void circumferenceOfCircleCalc() {
     Scanner myScanner = new Scanner(System.in);
-    if (circleList.isEmpty()) {
+    if (CircleManager.circleList.isEmpty()) {
       System.out.println("no items to calculate with");
       return;
     }
     System.out.println("please select circle to calculate circumference of");
-    int y = 0;
-    for (; y < circleList.size(); y++) {
-      System.out.printf(" %s  %s%n", y + 1, circleList.get(y).name);
+    for (int y = 0; y < CircleManager.circleList.size(); y++) {
+      System.out.printf(" %s  %s%n", y + 1, CircleManager.circleList.get(y).getName());
     }
     int choice;
     do {
       choice = myScanner.nextInt();
-    } while (!(choice >= 1 && choice <= y));
-    System.out.printf("circumference of %s is: %s", circleList.get(choice - 1).name,
-        circleList.get(choice - 1).calcCircumference());
+    } while (!(choice >= 1 && choice <= CircleManager.circleList.size()));
+    System.out.printf("circumference of %s is: %s", CircleManager.circleList.get(choice - 1).getName(),
+        CircleManager.circleList.get(choice - 1).calcCircumference());
   }
 
   /**
@@ -139,21 +134,21 @@ public class CircleMenu {
    */
   private static void surfaceAreaOfCircleCalc() {
     Scanner myScanner = new Scanner(System.in);
-    if (circleList.isEmpty()) {
+    if (CircleManager.circleList.isEmpty()) {
       System.out.println("no items to calculate with");
       return;
     }
     System.out.println("please select circle to calculate surface area of");
-    int y = 0;
-    for (; y < circleList.size(); y++) {
-      System.out.printf("%s  %s%n", y + 1, circleList.get(y).name);
+
+    for (int y = 0; y < CircleManager.circleList.size(); y++) {
+      System.out.printf("%s  %s%n", y + 1, CircleManager.circleList.get(y).getName());
     }
     int choice;
     do {
       choice = myScanner.nextInt();
-    } while (!(choice >= 1 && choice <= y));
-    System.out.printf("surface area of %s is: %s", circleList.get(choice - 1).name,
-        circleList.get(choice - 1).calcSurfaceArea());
+    } while (!(choice >= 1 && choice <= CircleManager.circleList.size()));
+    System.out.printf("surface area of %s is: %s", CircleManager.circleList.get(choice - 1).getName(),
+        CircleManager.circleList.get(choice - 1).calcSurfaceArea());
 
   }
 
@@ -177,28 +172,29 @@ public class CircleMenu {
    */
   private static void calcPoleAmountOfCircle() {
     Scanner myScanner = new Scanner(System.in);
-    if (circleList.isEmpty()) {
+    if (CircleManager.circleList.isEmpty()) {
       System.out.println("no items to calculate with");
       return;
     }
     System.out.println("please select circle to calculate amount of poles");
-    int y = 0;
-    for (; y < circleList.size(); y++) {
-      System.out.printf("%s  %s%n", y + 1, circleList.get(y).name);
+
+    for (int y = 0; y < CircleManager.circleList.size(); y++) {
+      System.out.printf("%s  %s%n", y + 1, CircleManager.circleList.get(y).getName());
     }
     int choiceRectangle;
     do {
       choiceRectangle = myScanner.nextInt();
-    } while (!(choiceRectangle >= 1 && choiceRectangle <= y));
+    } while (!(choiceRectangle >= 1 && choiceRectangle <= CircleManager.circleList.size()));
 
     System.out.println("enter the distance between poles (can be decimal number)");
     while (!myScanner.hasNextDouble()) {
       System.out.println("Please enter a number to choose.");
       myScanner.next();
     }
+    double poleDistance=myScanner.nextDouble();
     System.out.printf("amount of poles in the fence around %s is: %s",
-        circleList.get(choiceRectangle - 1).name,
-        circleList.get(choiceRectangle - 1).calcPoleAmount(myScanner.nextDouble()));
+        CircleManager.circleList.get(choiceRectangle - 1).getName(),
+        CircleManager.circleList.get(choiceRectangle - 1).calcPoleAmount(poleDistance));
   }
 
   /**
@@ -206,28 +202,29 @@ public class CircleMenu {
    */
   private static void calcPoleDistanceOfCircle() {
     Scanner myScanner = new Scanner(System.in);
-    if (circleList.isEmpty()) {
+    if (CircleManager.circleList.isEmpty()) {
       System.out.println("no items to calculate with");
       return;
     }
     System.out.println("please select circle to calculate distance between poles");
-    int y = 0;
-    for (; y < circleList.size(); y++) {
-      System.out.printf("%s  %s%n", y + 1, circleList.get(y).name);
+
+    for (int y = 0; y < CircleManager.circleList.size(); y++) {
+      System.out.printf("%s  %s%n", y + 1, CircleManager.circleList.get(y).getName());
     }
     int choiceCircle;
     do {
       choiceCircle = myScanner.nextInt();
-    } while (!(choiceCircle >= 1 && choiceCircle <= y));
+    } while (!(choiceCircle >= 1 && choiceCircle <= CircleManager.circleList.size()));
 
     System.out.println("how many poles are in the fence");
     while (!myScanner.hasNextInt()) {
       System.out.println("Please enter a number to choose.");
       myScanner.next();
     }
+    int amountOfPoles= myScanner.nextInt();
     System.out.printf("distance between poles of %s is: %s",
-        circleList.get(choiceCircle - 1).name,
-        circleList.get(choiceCircle - 1).calcPoleDistance(myScanner.nextInt()));
+        CircleManager.circleList.get(choiceCircle - 1).getName(),
+        CircleManager.circleList.get(choiceCircle - 1).calcPoleDistance(amountOfPoles));
   }
 
 }

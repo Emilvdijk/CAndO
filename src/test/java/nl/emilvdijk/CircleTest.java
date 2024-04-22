@@ -13,21 +13,21 @@ class CircleTest {
     Circle circy3 = new Circle("circy3",0.5);
 
     @Test
-    void diameter() {
+    void testIfDiameterReturnsCorrectResult() {
         assertEquals(16,circy.diameter());
         assertEquals(24,circy2.diameter());
         assertEquals(1,circy3.diameter());
       }
 
     @Test
-    void testDiameter() {
+    void testIfStaticDiameterReturnsCorrectResult() {
         assertEquals(16,Circle.diameter(8));
       }
 
     @Test
     void setRadius() {
         circy3.setRadius(2);
-        assertEquals(2,circy3.radius);
+        assertEquals(2,circy3.getRadius());
       }
 
     @Test

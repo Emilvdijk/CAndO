@@ -9,7 +9,7 @@ public class CAndO {
    * menu in infinite loop asks input and advances choice
    *
    */
-  public static void main() {
+  public static void main(String[] args) {
     System.out.println("Welcome to Rectangles and Circles inc.");
     while (true) {
       Scanner myScanner = new Scanner(System.in);

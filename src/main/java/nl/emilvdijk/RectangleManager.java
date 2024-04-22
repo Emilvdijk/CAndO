@@ -5,6 +5,8 @@ import java.util.Scanner;
 
 public class RectangleManager {
 
+  static final ArrayList<Rectangle> rectanglesList = new ArrayList<>();
+
   /**
    * private constructor to prevent instantiation
    */
@@ -21,15 +23,15 @@ public class RectangleManager {
       System.out.println("no items to delete");
       return;
     }
-    int y = 1;
+
     System.out.println("Which rectangle would you like to delete:");
-    for (; y - 1 < rectangleList.size(); y++) {
-      System.out.printf("%s  %s%n", y, rectangleList.get(y - 1).name);
+    for ( int y = 1; y - 1 < rectangleList.size(); y++) {
+      System.out.printf("%s  %s%n", y, rectangleList.get(y - 1).getName());
     }
     int choice;
     do {
       choice = myScanner.nextInt();
-    } while (!(choice >= 1 && choice <= y - 1));
+    } while (!(choice >= 1 && choice <= rectangleList.size()));
     rectangleList.remove(choice - 1);
   }
 
