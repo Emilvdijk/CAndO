@@ -34,8 +34,8 @@ class CircleManagerTest {
   void deleteCircle() {
     Circle nicecircy1 = new Circle("nice",1);
     ArrayList<Circle> cirlceList = new ArrayList<>();
-
     cirlceList.add(nicecircy1);
+
     assertEquals(1, cirlceList.size());
     CircleManager.deleteCircle(cirlceList);
     String testOutput = outContent.toString();
@@ -50,8 +50,6 @@ class CircleManagerTest {
     String testOutput = outContent.toString();
     assertTrue(testOutput.contains("no items to delete"));
     assertEquals(0, circleList.size());
-
-
   }
 
   @Test

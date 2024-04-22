@@ -32,7 +32,3 @@ d
 4src/test/java/nl/emilvdijk/RectangleManagerTest.java,a\d\ad46686794110229357fc96d0ebb93a7c0e2aa25
 a
 1src/test/java/nl/emilvdijk/CircleManagerTest.java,1\d\1df1385b2e4df8fa1bd7be4cd68b0f1d436c348a
-q
-Asrc/main/java/nl/emilvdijk/constructorsandoverloading/Circle.java,2\1\217514ca339e00cfce2907ce261568acf182ea5c
-x
-Hsrc/main/java/nl/emilvdijk/constructorsandoverloading/RectangleMenu.java,9\1\9137ce888d0ed9eaa957bea9e90b7543d1733d7c

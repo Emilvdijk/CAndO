@@ -15,8 +15,6 @@ import org.junit.jupiter.api.Test;
 
 class RectangleManagerTest {
 
-//  @FIXME deleteRectangle2 test works on his own but when whole file is run it fails
-
 
   static InputStream inputStream = new ByteArrayInputStream("1\r\n".getBytes());
   final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
@@ -25,12 +23,13 @@ class RectangleManagerTest {
   @BeforeEach
   public void setUpStream() {
     System.setOut(new PrintStream(outContent, false, StandardCharsets.UTF_8));
+    inputStream = new ByteArrayInputStream("1\r\n".getBytes());
+    System.setIn(inputStream);
   }
 
   @BeforeAll
   static void replaceInputStream() {
     io = System.in;
-    System.setIn(inputStream);
   }
 
   @Test
