@@ -1,11 +1,13 @@
 package nl.emilvdijk;
 
 public class Rectangle {
+  String name;
 
   int length;
   int width;
 
-  public Rectangle(int length, int width) {
+  public Rectangle(String name ,int length, int width) {
+    this.name = name;
     this.length = length;
     this.width = width;
   }
@@ -20,23 +22,23 @@ public class Rectangle {
     this.width = 2;
   }
 
-  int CalcSurfaceArea() {
+  int calcSurfaceArea() {
     return length * width;
   }
 
-  static int CalcSurfaceArea(int Length, int Width) {
-    return Length * Width;
+  static int calcSurfaceArea(int length, int width) {
+    return length * width;
   }
 
-  int CalcCircumference() {
+  int calcCircumference() {
     return (length * 2) + (width * 2);
   }
 
-  static int CalcCircumference(int length, int width) {
+  static int calcCircumference(int length, int width) {
     return (length * 2) + (width * 2);
   }
 
-  int CalcFittingIn(Rectangle rectangleBase) {
+  int calcFittingIn(Rectangle rectangleBase) {
     Rectangle rectangleFitter = this;
     double compare1 = rectangleBase.width / rectangleFitter.length;
     double compare2 = rectangleBase.length / rectangleFitter.width;
@@ -49,7 +51,7 @@ public class Rectangle {
     return fitAmount;
   }
 
-  int CalcFittingIn(double length, double width) {
+  int calcFittingIn(double length, double width) {
     Rectangle rectangleFitter = this;
     double compare1 = width / rectangleFitter.length;
     double compare2 = length / rectangleFitter.width;
@@ -62,11 +64,19 @@ public class Rectangle {
     return fitAmount;
   }
 
-  double CalcPoleDistance(int poles) {
-    return this.CalcCircumference() / poles;
+  double calcPoleDistance(int poles) {
+    return (this.calcCircumference() / poles);
   }
 
-  double CalcPoleAmount(double poleDistance) {
-    return this.CalcCircumference() / poleDistance;
+  double calcPoleAmount(double poleDistance) {
+    return (this.calcCircumference() / poleDistance);
+  }
+
+
+  void rectanglePrinter() {
+    System.out.printf(
+        "Name: %-15s Length: %-6s  Width: %-6s %n",name,
+        length, width);
   }
 }
+

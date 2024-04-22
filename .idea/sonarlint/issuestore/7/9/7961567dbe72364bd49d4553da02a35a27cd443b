@@ -1,17 +1,5 @@
 
-Ä
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¶ ™’8Ò·Ä®ï1J$44d25d9b-3925-4d4f-aa29-0764c246e29d
-•	java:S100
-"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¨õ•„ûÿÿÿÿ8Õ·Ä®ï1J$2a2f72dd-b49a-4305-9cbc-ec62252d8c56
-m	java:S106"+Replace this use of System.out by a logger.(ÆÀûı8ˆÄ®ï1J$6b48338f-28ba-4aa3-8a9a-f628e2d4de42
-r	java:S106"+Replace this use of System.out by a logger.(Ô¾¶Íıÿÿÿÿ8Û·Ä®ï1J$d2bec75e-255d-4c9f-b3d7-9c6ac41b8151
-
-java:S1871"HThis case's code block is the same as the block for the case on line 26.(ÎÑáğıÿÿÿÿ8‹Ä®ï1J$f7e64d0b-fd7f-4e0f-aa53-c18dac2ac00a
-
-java:S1871"HThis case's code block is the same as the block for the case on line 26.(¦Ø®›ûÿÿÿÿ8‹Ä®ï1J$7b863dee-b59a-4e55-b083-1df6caa6ab44
-
-java:S1871 "HThis case's code block is the same as the block for the case on line 26.(âØ¬øÿÿÿÿ8ŠÄ®ï1J$f139f3fc-cb46-402b-9038-95f27b4b1411
-d	java:S131""Add a default case to this switch.(¨ÕÉ8ŒÄ®ï1J$537e9aaf-ff5d-4850-b15c-693e94586a44
-u
-java:S1144
-"-Remove this unused private "ShowMenu" method.(¨õ•„ûÿÿÿÿ8ß·Ä®ï1J$9a47f182-b5d7-4c60-98cf-5a53e49694cc
+l	java:S106	"+Replace this use of System.out by a logger.(Û›n8ÛÆÙ‘ğ1J$8354a687-0e38-49c6-ae68-5c45f97bb2bc
+m	java:S106"+Replace this use of System.out by a logger.(Îñë8ÜÆÙ‘ğ1J$ac828348-b98e-406b-98b0-cea16431ad12
+r	java:S106"+Replace this use of System.out by a logger.(‡¾ Ëıÿÿÿÿ8İÆÙ‘ğ1J$ed5afe1b-830b-4716-b90d-15297f466d29
+r	java:S106""+Replace this use of System.out by a logger.(‡¾ Ëıÿÿÿÿ8İÆÙ‘ğ1J$82a74298-70fd-4429-8d34-21081934b2c8

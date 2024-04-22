@@ -2,35 +2,37 @@ package nl.emilvdijk;
 
 import java.util.Scanner;
 
-/** Hello world! */
+
 public class CAndO {
 
-  public static void main(String[] args) {}
+  public static void main(String[] args) {
+    System.out.println("Welcome to Rectangles and Circles inc.");
+    while (true) {
+      Scanner myScanner = new Scanner(System.in);
+      System.out.println("""
+        
+          1 Rectangles menu
+          2 Circles menu
+          0 quit
+          """);
 
-  private void ShowMenu() {
-    Scanner myScanner = new Scanner(System.in);
-    System.out.println(
-        """
-Welcome to Rectangles and Circles co
-1 show
-2 Rectangles
-3 Circles
-0 quit
-""");
-    while (!myScanner.hasNextInt()) {
-      System.out.println("please enter a number to choose an option.");
-      myScanner.next();
-    }
-    char choice = myScanner.nextLine().charAt(0);
-    switch (choice) {
-      case '1':
-        break;
-      case '2':
-        break;
-      case '3':
-        break;
-      case '0':
-        break;
+      while (!myScanner.hasNextInt()) {
+        System.out.println("Please enter a number to choose.");
+        myScanner.next();
+      }
+
+      switch (myScanner.nextLine()) {
+        case "1":
+          RectangleMenu.menu();
+          break;
+        case "2":
+          CircleMenu.menu();
+          break;
+        case "0":
+          return;
+        default:
+          System.out.println("Please enter a number to choose.");
+      }
     }
   }
 }
