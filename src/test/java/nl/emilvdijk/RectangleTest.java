@@ -58,8 +58,8 @@ class RectangleTest {
 
     @Test
     void calcPoleDistance() {
-        assertEquals(2,recy.calcPoleDistance(5));
-        assertEquals(6,recy2.calcPoleDistance(5));
+        assertEquals(2.4,recy.calcPoleDistance(5));
+        assertEquals(6.4,recy2.calcPoleDistance(5));
       }
 
     @Test

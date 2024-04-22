@@ -5,9 +5,16 @@ import java.util.Scanner;
 
 public class CircleManager {
 
+  /**
+   * private constructor to prevent instantiation
+   */
   private CircleManager() {
   }
 
+  /**
+   * deletes a circle object from list of circle objects with user input
+   * @param circleList list to choose a circle object from and delete it
+   */
   static void deleteCircle(ArrayList<Circle> circleList) {
     Scanner myScanner = new Scanner(System.in);
     if (circleList.isEmpty()) {
@@ -26,6 +33,10 @@ public class CircleManager {
     circleList.remove(choice - 1);
   }
 
+  /**
+   * makes a new circle object with user input
+   * @return new circle object
+   */
   static Circle addCircle() {
     Scanner myScanner = new Scanner(System.in);
     System.out.println("please enter a name for your new circle");

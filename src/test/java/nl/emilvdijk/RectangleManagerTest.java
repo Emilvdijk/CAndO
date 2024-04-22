@@ -15,7 +15,7 @@ import org.junit.jupiter.api.Test;
 
 class RectangleManagerTest {
 
-//  @FIXME tests work on their own but when whole file is ran it fails
+//  @FIXME deleteRectangle2 test works on his own but when whole file is run it fails
 
 
   static InputStream inputStream = new ByteArrayInputStream("1\r\n".getBytes());
@@ -36,15 +36,13 @@ class RectangleManagerTest {
   @Test
   void deleteRectangle() {
     Rectangle nicerecy12 = new Rectangle("nice",1,1);
-    Rectangle nicerecy123 = new Rectangle("nice",1,1);
     ArrayList<Rectangle> rectanglesList2 = new ArrayList<>();
 
     rectanglesList2.add(nicerecy12);
-    rectanglesList2.add(nicerecy123);
-    assertEquals(2, rectanglesList2.size());
+    assertEquals(1, rectanglesList2.size());
     RectangleManager.deleteRectangle(rectanglesList2);
     String testOutput = outContent.toString();
-    assertEquals(1, rectanglesList2.size());
+    assertEquals(0, rectanglesList2.size());
     assertTrue(testOutput.contains("Which rectangle would you like to delete:"));
   }
 

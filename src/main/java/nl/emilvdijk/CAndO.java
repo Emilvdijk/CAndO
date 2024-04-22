@@ -5,7 +5,11 @@ import java.util.Scanner;
 
 public class CAndO {
 
-  public static void main(String[] args) {
+  /**
+   * menu in infinite loop asks input and advances choice
+   *
+   */
+  public static void main() {
     System.out.println("Welcome to Rectangles and Circles inc.");
     while (true) {
       Scanner myScanner = new Scanner(System.in);

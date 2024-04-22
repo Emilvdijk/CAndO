@@ -5,9 +5,16 @@ import java.util.Scanner;
 
 public class RectangleManager {
 
+  /**
+   * private constructor to prevent instantiation
+   */
   private RectangleManager() {
   }
 
+  /**
+   * deletes a rectangle object from list of rectangle objects with user input
+   * @param rectangleList list of rectangles to remove a rectangle object from
+   */
   static void deleteRectangle(ArrayList<Rectangle> rectangleList) {
     Scanner myScanner = new Scanner(System.in);
     if (rectangleList.isEmpty()) {
@@ -26,6 +33,10 @@ public class RectangleManager {
     rectangleList.remove(choice - 1);
   }
 
+  /**
+   * makes a new rectangle object with user input
+   * @return new rectangle object
+   */
   static Rectangle addRectangle() {
     Scanner myScanner = new Scanner(System.in);
     System.out.println("please enter a name for your new rectangle");

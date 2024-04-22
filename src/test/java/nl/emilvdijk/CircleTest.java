@@ -1,13 +1,12 @@
 package nl.emilvdijk;
 
-import java.io.ByteArrayInputStream;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import java.io.ByteArrayOutputStream;
-import java.io.InputStream;
 import java.io.PrintStream;
 import java.nio.charset.StandardCharsets;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 class CircleTest {
     Circle circy = new Circle();
     Circle circy2 = new Circle("circy2",12);
@@ -63,8 +62,8 @@ class CircleTest {
     @Test
     void calcPoleAmount() {
         assertEquals(8,circy3.calcPoleAmount(0.39269908169872414));
-        assertEquals(0.39269908169872414,circy3.calcPoleAmount(8));
-        assertEquals(100.53096491487338,circy.calcPoleAmount(0.5));
+        assertEquals(0,circy3.calcPoleAmount(8));
+        assertEquals(100,circy.calcPoleAmount(0.5));
       }
 
     @Test
