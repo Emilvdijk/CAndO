@@ -17,6 +17,7 @@ public class CAndO {
         
           1 Rectangles menu
           2 Circles menu
+          3 Triangle menu
           0 quit
           """);
 
@@ -27,10 +28,13 @@ public class CAndO {
 
       switch (myScanner.nextLine()) {
         case "1":
-          RectangleMenu.menu();
+          RectangleMenu.menu(myScanner);
           break;
         case "2":
-          CircleMenu.menu();
+          CircleMenu.menu(myScanner);
+          break;
+        case "3":
+          TriangleMenu.menu(myScanner);
           break;
         case "0":
           return;

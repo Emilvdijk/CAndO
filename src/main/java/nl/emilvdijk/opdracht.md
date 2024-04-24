@@ -36,3 +36,10 @@ De bovenstaande classes worden ingezet voor een bedrijf dat hekken neerzet. Voeg
 Maak hier een programmatje van waar de gebruiker de keuze heeft om een vierkant of een cirkel te maken
 en de bijbehorende waardes in te vullen. De gebruiker kan vervolgens de omtrek en oppervlakte van het
 object berekenen en het aantal palen (of aantal meters tussen de palen) berekenen.
+
+## 2 Shapes
+Maak voor de opdracht die eerder is gemaakt voor method overloading de class abstracte class Shape. Declareer de methods die zowel Circle als Rectange gemeen hebben als abstracte methods in de class Shape. Bijvoorbeeld: getArea() en getPerimeter(). LETOP: De parameters moeten voor methods uit beide classes hetzelfde zijn.
+
+Zorg dat de classes Circle en Rectangle de class Shape extenden.
+
+Maak een nieuwe class Triangle die de class Shape extend. Implementeer de methods getArea() en getPerimeter() voor deze nieuwe class.

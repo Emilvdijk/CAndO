@@ -64,16 +64,16 @@ class RectangleTest {
 
     @Test
     void calcPoleAmount() {
-        assertEquals(2.4,recy.calcPoleAmount(5));
-        assertEquals(4.8,recy.calcPoleAmount(2.5));
+        assertEquals(2,recy.calcPoleAmount(5));
+        assertEquals(4,recy.calcPoleAmount(2.5));
         assertEquals(1,recy3.calcPoleAmount(10));
       }
 
   @Test
-  void rectanglePrinter() {
+  void printer() {
     final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     System.setOut(new PrintStream(outContent, false, StandardCharsets.UTF_8));
-    recy3.rectanglePrinter();
+    recy3.printer();
     String testOutput = outContent.toString();
     assertTrue(testOutput.contains("Name: recy3           Length: 1       Width: 4"));
 

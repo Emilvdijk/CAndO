@@ -32,3 +32,17 @@ d
 4src/test/java/nl/emilvdijk/RectangleManagerTest.java,a\d\ad46686794110229357fc96d0ebb93a7c0e2aa25
 a
 1src/test/java/nl/emilvdijk/CircleManagerTest.java,1\d\1df1385b2e4df8fa1bd7be4cd68b0f1d436c348a
+U
+%src/main/java/nl/emilvdijk/Shape.java,f\a\fa99b0f40bf5a58f579b205ca70140ae40b5165f
+X
+(src/main/java/nl/emilvdijk/Triangle.java,f\3\f38f3e90f71faeddc75ccfc05d6afa3422205e3d
+\
+,src/test/java/nl/emilvdijk/TriangleTest.java,e\3\e34b414d202772dd801cf4e7d6e72ec7185c97c2
+_
+/src/main/java/nl/emilvdijk/TriangleManager.java,b\b\bb3921020197f720cb12380f9343054a5de8c8aa
+\
+,src/main/java/nl/emilvdijk/TriangleMenu.java,f\c\fc5231f657cc2403b64313204e728f51577d5779
+a
+1src/test/java/nl/emilvdijk/RectangleMenuTest.java,4\0\40f2131519b3d3e0c124e37c6def9774b7030497
+Y
+)src/test/java/nl/emilvdijk/ShapeTest.java,5\b\5bb8e5c2a4d3073ab5c34bafe819858d761885c6

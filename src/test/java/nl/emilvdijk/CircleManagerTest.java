@@ -34,16 +34,16 @@ class CircleManagerTest {
   @Test
   void deleteCircle() {
     Circle nicecircy1 = new Circle("nice",1);
-    ArrayList<Circle> cirlceList = new ArrayList<>();
-    cirlceList.add(nicecircy1);
+    ArrayList<Circle> circleList = new ArrayList<>();
+    circleList.add(nicecircy1);
 
-    assertEquals(1, cirlceList.size());
-    assertTrue(cirlceList.contains(nicecircy1));
-    CircleManager.deleteCircle(cirlceList);
+    assertEquals(1, circleList.size());
+    assertTrue(circleList.contains(nicecircy1));
+    CircleManager.deleteCircle(circleList);
     String testOutput = outContent.toString();
-    assertEquals(0, cirlceList.size());
+    assertEquals(0, circleList.size());
     assertTrue(testOutput.contains("Which circle would you like to delete:"));
-    assertFalse(cirlceList.contains(nicecircy1));
+    assertFalse(circleList.contains(nicecircy1));
 
   }
 
@@ -66,7 +66,7 @@ class CircleManagerTest {
     System.setIn(inputStream2);
     circleList.add(CircleManager.addCircle());
     assertEquals(1, circleList.size());
-    assertEquals("nicetest",circleList.get(0).getName());
-    assertEquals(12,circleList.get(0).getRadius());
+    assertEquals("nicetest",circleList.getFirst().getName());
+    assertEquals(12,circleList.getFirst().getRadius());
   }
 }

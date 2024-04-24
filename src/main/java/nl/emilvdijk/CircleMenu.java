@@ -13,9 +13,8 @@ public class CircleMenu {
   /**
    * looping menu that asks user input and advances chosen option
    */
-  static void menu() {
+  static void menu(Scanner myScanner) {
     System.out.println("Circle Manager");
-    Scanner myScanner = new Scanner(System.in);
     while (true) {
       System.out.println("""
           1 list Circle
@@ -90,7 +89,7 @@ public class CircleMenu {
       return;
     }
     for (Circle circle : CircleManager.circleList) {
-      circle.circlePrinter();
+      circle.printer();
     }
   }
 

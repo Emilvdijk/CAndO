@@ -1,8 +1,7 @@
 package nl.emilvdijk;
 
-class Circle {
+class Circle extends Shape {
 
-  private String name;
   private double radius;
 
   /**
@@ -11,23 +10,20 @@ class Circle {
    * @param radius radius of circle object
    */
   Circle(String name,double radius) {
-    this.name = name;
+    super(name);
     this.radius = radius;
-  }
-
-  String getName() {
-    return name;
-  }
-
-  public double getRadius() {
-    return radius;
   }
 
   /**
    * circle object constructor which makes radius 8
    */
   Circle() {
+    super("circle");
     this.radius = 8;
+  }
+
+  public double getRadius() {
+    return radius;
   }
 
   /**
@@ -74,6 +70,7 @@ class Circle {
 
   /**
    * calculates surface area of circle object
+   *
    * @return surface area of the circle object
    */
   double calcSurfaceArea() {
@@ -94,6 +91,7 @@ class Circle {
    * @param poles amount of poles
    * @return distance between poles
    */
+  @Override
   double calcPoleDistance(int poles) {
     return this.calcCircumference() / poles;
   }
@@ -103,6 +101,7 @@ class Circle {
    * @param poleDistance distance between poles to calculate with
    * @return amount of poles
    */
+  @Override
   int calcPoleAmount(double poleDistance) {
     return (int) (this.calcCircumference() / poleDistance);
   }
@@ -110,7 +109,7 @@ class Circle {
   /**
    * prints out circle object details
    */
-  void circlePrinter() {
+  void printer() {
     System.out.printf(
         "Name: %-15s radius: %-6s%n",name,
         radius);
