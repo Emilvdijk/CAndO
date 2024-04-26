@@ -11,7 +11,7 @@ public class CAndO {
    *
    */
   public static void main(String[] args) {
-    System.out.println("Welcome to Rectangles and Circles inc.");
+    System.out.println("Welcome to Rectangles and Circles and Triangles inc.");
     while (true) {
       Scanner myScanner = new Scanner(System.in);
       System.out.println("""

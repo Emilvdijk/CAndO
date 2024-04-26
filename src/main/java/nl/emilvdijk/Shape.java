@@ -1,6 +1,6 @@
 package nl.emilvdijk;
 
-public abstract class Shape {
+abstract class Shape {
   protected String name;
 
   protected Shape(String name) {
