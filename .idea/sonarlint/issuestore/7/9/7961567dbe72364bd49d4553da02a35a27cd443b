@@ -1,5 +1,10 @@
 
-l	java:S106"+Replace this use of System.out by a logger.(Û›n8‡¦Â†ñ1J$d2595b2b-2997-4494-928c-ac1d4d3af814
-m	java:S106"+Replace this use of System.out by a logger.(Îñë8‰¦Â†ñ1J$2bf4d7e5-50f9-4930-8ebf-b55b34862162
-r	java:S106"+Replace this use of System.out by a logger.(‡¾ Ëıÿÿÿÿ8‰¦Â†ñ1J$68d61ebb-b357-4d2a-ba16-d7bb98382b14
-r	java:S106*"+Replace this use of System.out by a logger.(‡¾ Ëıÿÿÿÿ8Š¦Â†ñ1J$58375b37-c30c-4cff-bc0b-d2931c38b1c2
+©
+java:S1192"aDefine a constant instead of duplicating this literal "Please enter a number to choose." 4 times.(‡¾ Ëıÿÿÿÿ8à·ËÔñ1J$2bf1e02f-9905-43f2-a43c-63e0ce0dfed1
+l	java:S106"+Replace this use of System.out by a logger.(Û›n8‡¦Â†ñ1J$4559afea-c8bf-4ced-9e99-6f2c28b01229
+m	java:S106"+Replace this use of System.out by a logger.(Îñë8‰¦Â†ñ1J$d8970e86-0a27-4cd4-b283-94bf024f5e7e
+r	java:S106"+Replace this use of System.out by a logger.(‡¾ Ëıÿÿÿÿ8‰¦Â†ñ1J$0eac784c-3e85-4dde-a44c-483edf49f5b9
+r	java:S106+"+Replace this use of System.out by a logger.(‡¾ Ëıÿÿÿÿ8Š¦Â†ñ1J$5a7694dd-050c-47e3-942b-ed70796cec51
+r	java:S1068"+Replace this use of System.out by a logger.(›ñ¤ªùÿÿÿÿ8‘¸ËÔñ1J$23bbec99-8deb-4bff-b23b-4f7a7853be1e
+r	java:S106H"+Replace this use of System.out by a logger.(‡¾ Ëıÿÿÿÿ8’¸ËÔñ1J$0b6d50d7-ee40-47a4-b074-a5bb2cdea5d5
+r	java:S106W"+Replace this use of System.out by a logger.(‡¾ Ëıÿÿÿÿ8“¸ËÔñ1J$29571344-a4cf-4b25-ac2b-268aa8fe5131

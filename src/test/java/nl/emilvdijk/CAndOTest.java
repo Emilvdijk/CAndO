@@ -13,7 +13,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class ShapeTest {
+class CAndOTest {
 
   static InputStream inputStream = new ByteArrayInputStream("n\r\n1\r\n".getBytes());
   final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
@@ -38,30 +38,28 @@ class ShapeTest {
     Triangle x = new Triangle("nice",1,1,1);
     shapeList.add(x);
     Scanner myScanner = new Scanner("1\n");
-    assertEquals(1,Shape.chooseFromList(shapeList,myScanner));
+    assertEquals(1, CAndO.chooseFromList(shapeList,myScanner));
   }
 
   @Test
   void chooseNumber() {
     Scanner myScanner = new Scanner("1\n");
-    int x = Shape.chooseNumber(myScanner);
+    int x = CAndO.chooseNumber(myScanner);
     assertEquals(1,x);
     myScanner = new Scanner("n\n1\n");
-    int y = Shape.chooseNumber(myScanner);
+    int y = CAndO.chooseNumber(myScanner);
     String testOutput = outContent.toString();
     assertTrue(testOutput.contains("Please enter a number to choose."));
     assertEquals(1,y);
-
-
   }
 
   @Test
   void chooseDouble() {
     Scanner myScanner = new Scanner("1\n");
-    double x = Shape.chooseDouble(myScanner);
+    double x = CAndO.chooseDouble(myScanner);
     assertEquals(1.0,x);
     myScanner = new Scanner("n\n1,5\n");
-    double y = Shape.chooseDouble(myScanner);
+    double y = CAndO.chooseDouble(myScanner);
     String testOutput = outContent.toString();
     assertTrue(testOutput.contains("Please enter a number to choose."));
     assertEquals(1.5,y);

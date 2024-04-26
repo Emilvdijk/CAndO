@@ -43,8 +43,8 @@ class TriangleTest {
   void printer(){
     final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     System.setOut(new PrintStream(outContent, false, StandardCharsets.UTF_8));
-    triangle.printer();
+    System.out.println(triangle.toFormattedString());
     String testOutput = outContent.toString();
-    assertTrue(testOutput.contains("Name: niceT           side1: 10      side2: 9      side3: 8"));
+    assertTrue(testOutput.contains("Name: niceT           Side 1: 10     Side 2: 9      Side 3: 8"));
   }
 }

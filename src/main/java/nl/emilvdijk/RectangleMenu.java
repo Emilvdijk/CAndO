@@ -92,7 +92,7 @@ public class RectangleMenu {
       return;
     }
     for (Shape rectangle : rectangles) {
-      rectangle.printer();
+      System.out.println(rectangle.toFormattedString());
     }
   }
 
@@ -109,7 +109,7 @@ public class RectangleMenu {
       return;
     }
     System.out.println("Which rectangle would you like to delete:");
-    int choice = Shape.chooseFromList(rectangles, myScanner);
+    int choice = CAndO.chooseFromList(rectangles, myScanner);
     RectangleManager.deleteRectangle(choice);
   }
 
@@ -142,7 +142,7 @@ public class RectangleMenu {
       return;
     }
     System.out.println("please select rectangle to calculate circumference of");
-    int choice = Shape.chooseFromList(rectangles, myScanner);
+    int choice = CAndO.chooseFromList(rectangles, myScanner);
     System.out.printf("circumference of %s is: %s %n", rectangles.get(choice - 1).getName(),
         rectangles.get(choice - 1).calcCircumference());
   }
@@ -152,9 +152,9 @@ public class RectangleMenu {
    */
   private static void surfaceAreaCalc(Scanner myScanner) {
     System.out.println("please enter length");
-    int length = Shape.chooseNumber(myScanner);
+    int length = CAndO.chooseNumber(myScanner);
     System.out.println("please enter width");
-    int width = Shape.chooseNumber(myScanner);
+    int width = CAndO.chooseNumber(myScanner);
     System.out.printf("surface area is: %s %n", Rectangle.calcSurfaceArea(length, width));
   }
 
@@ -168,7 +168,7 @@ public class RectangleMenu {
       return;
     }
     System.out.println("please select rectangle to calculate surface area of");
-    int choice = Shape.chooseFromList(rectangles, myScanner);
+    int choice = CAndO.chooseFromList(rectangles, myScanner);
     System.out.printf("surface area of %s is: %s %n", rectangles.get(choice - 1).getName(),
         rectangles.get(choice - 1).calcSurfaceArea());
   }
@@ -184,10 +184,10 @@ public class RectangleMenu {
       return;
     }
     System.out.println("please select rectangle to calculate distance between poles");
-    int choice = Shape.chooseFromList(rectangles, myScanner);
+    int choice = CAndO.chooseFromList(rectangles, myScanner);
 
     System.out.println("how many poles are in the fence");
-    int amountOfPoles = Shape.chooseNumber(myScanner);
+    int amountOfPoles = CAndO.chooseNumber(myScanner);
     System.out.printf("distance between poles of %s is: %s %n",
         rectangles.get(choice - 1).getName(),
         rectangles.get(choice - 1).calcPoleDistance(amountOfPoles));
@@ -205,10 +205,10 @@ public class RectangleMenu {
     }
     System.out.println("please select rectangle to calculate amount of poles");
 
-    int choiceRectangle = Shape.chooseFromList(rectangles, myScanner);
+    int choiceRectangle = CAndO.chooseFromList(rectangles, myScanner);
 
     System.out.println("enter the distance between poles (can be decimal number)");
-    double poleDistance = Shape.chooseDouble(myScanner);
+    double poleDistance = CAndO.chooseDouble(myScanner);
     System.out.printf("amount of poles in the fence around %s is: %s %n",
         rectangles.get(choiceRectangle - 1).getName(),
         rectangles.get(choiceRectangle - 1).calcPoleAmount(poleDistance));

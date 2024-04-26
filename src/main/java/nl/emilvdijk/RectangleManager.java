@@ -37,9 +37,9 @@ public class RectangleManager {
     System.out.println("please enter a name for your new rectangle");
     String name = myScanner.nextLine();
     System.out.println("please enter rectangle width");
-    int length = Shape.chooseNumber(myScanner);
+    int length = CAndO.chooseNumber(myScanner);
     System.out.println("please enter rectangle length");
-    int width = Shape.chooseNumber(myScanner);
+    int width = CAndO.chooseNumber(myScanner);
     rectanglesList.add(new Rectangle(name, length, width));
   }
 }

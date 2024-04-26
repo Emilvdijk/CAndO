@@ -73,9 +73,9 @@ class RectangleTest {
   void printer() {
     final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     System.setOut(new PrintStream(outContent, false, StandardCharsets.UTF_8));
-    recy3.printer();
+    System.out.println(recy3.toFormattedString());
     String testOutput = outContent.toString();
-    assertTrue(testOutput.contains("Name: recy3           Length: 1       Width: 4"));
+    assertTrue(testOutput.contains("Name: recy3           Length: 1      Width: 4"));
 
   }
 }

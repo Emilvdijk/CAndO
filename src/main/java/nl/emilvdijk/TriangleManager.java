@@ -21,11 +21,11 @@ public class TriangleManager {
     System.out.println("please enter a name for your new triangle");
     String name = myScanner.nextLine();
     System.out.println("please enter triangle first side length");
-    int side1 = Shape.chooseNumber(myScanner);
+    int side1 = CAndO.chooseNumber(myScanner);
     System.out.println("please enter triangle second side length");
-    int side2 = Shape.chooseNumber(myScanner);
+    int side2 = CAndO.chooseNumber(myScanner);
     System.out.println("please enter triangle finale side length");
-    int side3 = Shape.chooseNumber(myScanner);
+    int side3 = CAndO.chooseNumber(myScanner);
     triangleList.add(new Triangle(name, side1, side2, side3));
   }
 

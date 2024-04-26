@@ -8,6 +8,18 @@ public class Triangle extends Shape {
   private int side2;
   private int side3;
 
+  public int getSide1() {
+    return side1;
+  }
+
+  public int getSide2() {
+    return side2;
+  }
+
+  public int getSide3() {
+    return side3;
+  }
+
   /**
    * constructor for triangle objects
    *
@@ -28,10 +40,9 @@ public class Triangle extends Shape {
    *
    * @return area of triangle
    */
+  @Override
   double calcSurfaceArea() {
-    return 0.25 * sqrt(
-        (side1 + side2 + side3) * (-side1 + side2 + side3) * (side1 - side2 + side3) * (double) (
-            side1 + side2 - side3));
+    return calcSurfaceArea(side1 ,side2 ,side3);
   }
 
   /**
@@ -53,6 +64,7 @@ public class Triangle extends Shape {
    *
    * @return circumference of triangle
    */
+  @Override
   double calcCircumference() {
     return side1 + side2 + (double) side3;
   }
@@ -62,32 +74,16 @@ public class Triangle extends Shape {
   }
 
   /**
-   * calculates distance between poles in a fence of a triangle object
-   *
-   * @param poles amount of poles in triangle object fence
-   * @return distance between poles
+   * returns formatted string of triangle details
+   * @return formatted string of triangle details
    */
   @Override
-  double calcPoleDistance(int poles) {
-    return (this.calcCircumference() / poles);
-  }
-
-  /**
-   * calculates amount of poles in a fence of a triangle object
-   *
-   * @param poleDistance distance between poles in triangle object fence
-   * @return amount of poles
-   */
-  @Override
-  int calcPoleAmount(double poleDistance) {
-    return (int) (this.calcCircumference() / poleDistance);
-  }
-
-  /**
-   * triangle object details printer
-   */
-  void printer() {
-    System.out.printf("Name: %-15s side1: %-6s  side2: %-6s side3: %-6s %n", name, side1, side2,
-        side3);
+  public String toFormattedString(){
+    return "Name: %-15s Side 1: %-6s Side 2: %-6s Side 3: %-6s %n".formatted(
+        getName(),
+        getSide1(),
+        getSide2(),
+        getSide3()
+    );
   }
 }

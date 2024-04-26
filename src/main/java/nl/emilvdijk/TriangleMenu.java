@@ -94,7 +94,7 @@ public class TriangleMenu {
       return;
     }
     for (Shape triangle : triangles) {
-      triangle.printer();
+      System.out.println(triangle.toFormattedString());
     }
   }
 
@@ -109,7 +109,7 @@ public class TriangleMenu {
       return;
     }
     System.out.println("Which triangle would you like to delete:");
-    int choice = Shape.chooseFromList(triangles, myScanner);
+    int choice = CAndO.chooseFromList(triangles, myScanner);
     TriangleManager.deleteTriangle(choice);
   }
 
@@ -120,11 +120,11 @@ public class TriangleMenu {
    */
   private static void circumferenceCalc(Scanner myScanner) {
     System.out.println("please enter triangle first side length");
-    int side1 = Shape.chooseNumber(myScanner);
+    int side1 = CAndO.chooseNumber(myScanner);
     System.out.println("please enter triangle second side length");
-    int side2 = Shape.chooseNumber(myScanner);
+    int side2 = CAndO.chooseNumber(myScanner);
     System.out.println("please enter triangle finale side length");
-    int side3 = Shape.chooseNumber(myScanner);
+    int side3 = CAndO.chooseNumber(myScanner);
     System.out.printf("circumference is: %s %n", Triangle.calcCircumference(side1, side2, side3));
   }
 
@@ -139,7 +139,7 @@ public class TriangleMenu {
       return;
     }
     System.out.println("please select triangle to calculate circumference of");
-    int choice = Shape.chooseFromList(triangles, myScanner);
+    int choice = CAndO.chooseFromList(triangles, myScanner);
     System.out.printf("circumference of %s is: %s %n", triangles.get(choice - 1).getName(),
         triangles.get(choice - 1).calcCircumference());
   }
@@ -150,11 +150,11 @@ public class TriangleMenu {
    */
   private static void surfaceAreaCalc(Scanner myScanner) {
     System.out.println("please enter triangle first side length");
-    int side1 = Shape.chooseNumber(myScanner);
+    int side1 = CAndO.chooseNumber(myScanner);
     System.out.println("please enter triangle second side length");
-    int side2 = Shape.chooseNumber(myScanner);
+    int side2 = CAndO.chooseNumber(myScanner);
     System.out.println("please enter triangle finale side length");
-    int side3 = Shape.chooseNumber(myScanner);
+    int side3 = CAndO.chooseNumber(myScanner);
     System.out.printf("surface area is: %s %n", Triangle.calcSurfaceArea(side1,side2,side3));
 
   }
@@ -170,7 +170,7 @@ public class TriangleMenu {
       return;
     }
     System.out.println("please select triangle to calculate surface area of");
-    int choice = Shape.chooseFromList(triangles, myScanner);
+    int choice = CAndO.chooseFromList(triangles, myScanner);
     System.out.printf("surface area of %s is: %s %n", triangles.get(choice - 1).getName(),
         triangles.get(choice - 1).calcSurfaceArea());
   }
@@ -187,9 +187,9 @@ public class TriangleMenu {
       return;
     }
     System.out.println("please select triangle to calculate distance between poles");
-    int choice = Shape.chooseFromList(triangles, myScanner);
+    int choice = CAndO.chooseFromList(triangles, myScanner);
     System.out.println("how many poles are in the fence");
-    int amountOfPoles = Shape.chooseNumber(myScanner);
+    int amountOfPoles = CAndO.chooseNumber(myScanner);
     System.out.printf("distance between poles of %s is: %s %n",
         triangles.get(choice - 1).getName(),
         triangles.get(choice - 1).calcPoleDistance(amountOfPoles));
@@ -207,9 +207,9 @@ public class TriangleMenu {
     }
     System.out.println("please select rectangle to calculate amount of poles");
 
-    int choice = Shape.chooseFromList(triangles, myScanner);
+    int choice = CAndO.chooseFromList(triangles, myScanner);
     System.out.println("enter the distance between poles (can be decimal number)");
-    double poleDistance = Shape.chooseDouble(myScanner);
+    double poleDistance = CAndO.chooseDouble(myScanner);
     System.out.printf("amount of poles in the fence around %s is: %s %n",
         triangles.get(choice - 1).getName(),
         triangles.get(choice - 1).calcPoleAmount(poleDistance));

@@ -51,6 +51,7 @@ public class Rectangle extends Shape {
    *
    * @return surface area
    */
+  @Override
   double calcSurfaceArea() {
     return (double) length * width;
   }
@@ -71,6 +72,7 @@ public class Rectangle extends Shape {
    *
    * @return circumference
    */
+  @Override
   double calcCircumference() {
     return ((double) length * 2) + ((double) width * 2);
   }
@@ -117,12 +119,16 @@ public class Rectangle extends Shape {
   }
 
   /**
-   * prints out rectangle object details
+   * returns formatted string of rectangle details
+   * @return formatted string of rectangle details
    */
-  void printer() {
-    System.out.printf(
-        "Name: %-15s Length: %-6s  Width: %-6s %n", name,
-        length, width);
+  @Override
+  public String toFormattedString(){
+    return "Name: %-15s Length: %-6s Width: %-6s %n".formatted(
+        getName(),
+        getLength(),
+        getWidth()
+    );
   }
 
 }

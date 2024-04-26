@@ -55,6 +55,7 @@ class Circle extends Shape {
    * calculates circumference of circle object
    * @return circumference of circle object
    */
+  @Override
   double calcCircumference() {
     return (radius * 2) * Math.PI;
   }
@@ -73,6 +74,7 @@ class Circle extends Shape {
    *
    * @return surface area of the circle object
    */
+  @Override
   double calcSurfaceArea() {
     return Math.PI * (radius * radius);
   }
@@ -107,12 +109,15 @@ class Circle extends Shape {
   }
 
   /**
-   * prints out circle object details
+   * returns formatted string of circle details
+   * @return formatted string of circle details
    */
-  void printer() {
-    System.out.printf(
-        "Name: %-15s radius: %-6s%n",name,
-        radius);
+  @Override
+  public String toFormattedString(){
+    return "Name: %-15s Radius: %-6s %n".formatted(
+        getName(),
+        getRadius()
+    );
   }
 
 }

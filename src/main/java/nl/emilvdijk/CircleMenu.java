@@ -89,7 +89,7 @@ public class CircleMenu {
       return;
     }
     for (Circle circle : CircleManager.circleList) {
-      circle.printer();
+      System.out.println(circle.toFormattedString());
     }
   }
 

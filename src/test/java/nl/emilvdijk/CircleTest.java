@@ -70,9 +70,9 @@ class CircleTest {
     void printer() {
         final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent, false, StandardCharsets.UTF_8));
-        circy3.printer();
+        System.out.println(circy3.toFormattedString());
         String testOutput = outContent.toString();
-        assertTrue(testOutput.contains("Name: circy3          radius: 0.5"));
+        assertTrue(testOutput.contains("Name: circy3          Radius: 0.5"));
     }
 
 
