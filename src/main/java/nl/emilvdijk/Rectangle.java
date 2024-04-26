@@ -71,6 +71,7 @@ public class Rectangle extends Shape {
    *
    * @return circumference
    */
+  @Override
   double calcCircumference() {
     return ((double) length * 2) + ((double) width * 2);
   }

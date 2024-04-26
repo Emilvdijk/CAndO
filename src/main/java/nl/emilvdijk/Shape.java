@@ -3,7 +3,7 @@ package nl.emilvdijk;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public abstract class Shape {
+abstract class Shape {
   protected String name;
 
   protected Shape(String name) {

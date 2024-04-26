@@ -55,6 +55,7 @@ class Circle extends Shape {
    * calculates circumference of circle object
    * @return circumference of circle object
    */
+  @Override
   double calcCircumference() {
     return (radius * 2) * Math.PI;
   }
@@ -73,6 +74,7 @@ class Circle extends Shape {
    *
    * @return surface area of the circle object
    */
+  @Override
   double calcSurfaceArea() {
     return Math.PI * (radius * radius);
   }

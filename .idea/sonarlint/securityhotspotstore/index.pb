@@ -42,7 +42,5 @@ _
 /src/main/java/nl/emilvdijk/TriangleManager.java,b\b\bb3921020197f720cb12380f9343054a5de8c8aa
 \
 ,src/main/java/nl/emilvdijk/TriangleMenu.java,f\c\fc5231f657cc2403b64313204e728f51577d5779
-a
-1src/test/java/nl/emilvdijk/RectangleMenuTest.java,4\0\40f2131519b3d3e0c124e37c6def9774b7030497
 Y
 )src/test/java/nl/emilvdijk/ShapeTest.java,5\b\5bb8e5c2a4d3073ab5c34bafe819858d761885c6

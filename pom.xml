@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>nl.emilvdijk</groupId>
-  <artifactId>untitled1</artifactId>
+  <artifactId><![CDATA[c&o]]></artifactId>
   <version>1.0-SNAPSHOT</version>
 
   <name>untitled1</name>

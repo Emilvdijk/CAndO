@@ -53,6 +53,7 @@ public class Triangle extends Shape {
    *
    * @return circumference of triangle
    */
+  @Override
   double calcCircumference() {
     return side1 + side2 + (double) side3;
   }
